@@ -1,0 +1,230 @@
+/*  ============
+    Header Rules
+    ============  */
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+header .content-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #fff;
+}
+header .logo {
+  margin: 0 7px;
+  min-width: 100px;
+}
+@media (min-width: 768px) {
+  header .logo {
+    width: auto;
+  }
+}
+header .logo img {
+  width: 100%;
+}
+nav {
+  position: relative;
+  display: flex;
+  color: #fff;
+  align-items: center;
+  font-size: 0.9em;
+}
+@media (min-width: 768px) {
+  nav {
+    font-size: 1em;
+  }
+}
+
+.nav-icon {
+  position: relative;
+  display: block;
+  height: 10px;
+  width: 38px; /* bullet-width = 10px *3, space-between = 4px *2 */
+  margin-right: 10px;
+  cursor: pointer;
+}
+.nav-icon span {
+  position: absolute;
+  bottom: 0;
+  display: block;
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #fff;
+  border-radius: 100%;
+}
+.nav-icon:hover span {
+  background-color: var(--accent-color);
+}
+/* Start Bullets Animation */
+@keyframes bullet-up {
+  50% {
+    bottom: 10px;
+  }
+  99% {
+    bottom: 0;
+  }
+  100% {
+    animation-name: none;
+  }
+}
+.nav-icon :nth-child(1) {
+  right: 0;
+}
+.nav-icon.active :nth-child(1) {
+  animation: bullet-up 0.5s ease;
+}
+.nav-icon :nth-child(2) {
+  right: 14px;
+}
+.nav-icon.active :nth-child(2) {
+  animation: bullet-up 0.5s ease 0.15s;
+}
+.nav-icon :nth-child(3) {
+  right: 28px;
+}
+.nav-icon.active :nth-child(3) {
+  animation: bullet-up 0.5s ease 0.3s;
+}
+/* End Bullets Animation */
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+@media (max-width: 767px) {
+  nav ul {
+    position: absolute;
+    top: calc(100% + 10px);
+    right: 40px;
+    width: 120px;
+    height: 0;
+    padding: 0;
+    background-color: #3338;
+    border: 0 solid #000;
+    border-top-color: transparent;
+    overflow: hidden;
+    transition: height 0.3s, border 0.3s;
+  }
+  nav ul.active {
+    height: 310px; /* from inspect */
+    border-width: 1px;
+  }
+}
+nav li {
+  position: relative;
+  padding: 20px 10px 15px;
+  cursor: pointer;
+  user-select: none;
+}
+@media (max-width: 767px) {
+  nav li {
+    width: fit-content;
+    padding-right: 5px;
+    transition: padding-left 0.3s;
+  }
+  nav li:hover,
+  nav li.active {
+    color: var(--accent-color);
+    padding-left: 15px;
+  }
+  nav li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-bottom: 1px solid var(--accent-color);
+    transition: width 0.3s;
+  }
+  nav li.active::before {
+    width: 100%;
+  }
+}
+/* Mid Screens And UP */
+@media (min-width: 768px) {
+  .nav-icon {
+    display: none;
+  }
+  nav ul {
+    display: block;
+  }
+  nav li {
+    display: inline-block;
+    border-bottom: 0 solid var(--accent-color);
+    padding: 30px 15px 20px;
+  }
+  nav li.active,
+  nav li:hover {
+    color: var(--accent-color);
+  }
+  nav li.active {
+    border-width: 2px;
+  }
+  nav li::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    /* Background Effect */
+    background-image: linear-gradient(
+      to top,
+      var(--accent-color),
+      transparent 30%,
+      transparent
+    );
+    opacity: 0.2;
+    z-index: -1;
+    transition: height 0.1s;
+  }
+  nav li.active::before {
+    height: 100%;
+  }
+}
+/* Search */
+.search {
+  position: relative;
+}
+.search-btn {
+  font-size: 1.4em;
+  padding-left: 20px;
+  padding-right: 10px;
+  border-left: 1px solid #fff;
+}
+.search-btn:hover {
+  color: var(--accent-color);
+  cursor: pointer;
+}
+.search-input {
+  position: absolute;
+  top: calc(100% + 15px);
+  right: 0;
+  width: 0;
+  padding: 10px 0;
+
+  border: 0 solid #000;
+  background-color: #3338;
+  color: #fff;
+  transition: width 0.3s, padding 0.3s, border-width 1ms ease 0.3s;
+}
+@media (min-width: 768px) {
+  .search-input {
+    top: calc(100% + 30px);
+  }
+}
+.search-input:focus {
+  outline: 1px solid var(--accent-color);
+}
+.search-input.active {
+  width: 220px;
+  padding: 10px;
+  border-width: 1px;
+  transition: width 0.3s, padding 0.3s;
+}

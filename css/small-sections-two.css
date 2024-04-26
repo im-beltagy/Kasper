@@ -1,0 +1,283 @@
+/*
+  Sections In File:-
+  ================
+  1. Quote Rules
+  2. Pricing Rules
+  3. Subscribe Rules
+  4. Contact Rules
+  5. Footer Rules
+*/
+
+/*  ===========
+    Quote Rules
+    ===========
+*/
+.quote {
+  background-image: url("../assets/quote.jpg");
+  background-size: cover;
+  background-position: center 20%;
+  /* --Inner Text-- */
+  line-height: 1.5;
+  color: #fff;
+  text-align: center;
+}
+.quote::before {
+  background-color: #000000c5;
+}
+.quote q {
+  position: relative;
+  font-size: 2em;
+}
+.quote span {
+  position: relative;
+  display: block;
+  margin-top: 10px;
+}
+
+/*  =============
+    Pricing Rules
+    =============
+*/
+@media (min-width: 576px) {
+  .pricing .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+.pricing .card {
+  background-color: #fcfcfc;
+  margin-bottom: 30px;
+}
+@media (min-width: 576px) {
+  .pricing .card {
+    flex-basis: calc((100% - 30px * 1) / 2);
+  }
+}
+@media (min-width: 992px) {
+  .pricing .card {
+    flex-basis: calc((100% - 30px * 2) / 3);
+  }
+}
+@media (min-width: 1200px) {
+  .pricing .card {
+    flex-basis: calc((100% - 30px * 3) / 4);
+  }
+}
+.pricing .card .card-sect {
+  border-top: 1px solid var(--accent-color);
+}
+.pricing .card > div {
+  padding: 40px;
+}
+.pricing .card .price {
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+  font-size: 60px;
+  font-weight: bold;
+}
+.pricing .card .price::before {
+  content: "$";
+  font-size: 24px;
+  font-weight: normal;
+  position: absolute;
+  right: 110%;
+}
+.pricing .card .price::after {
+  content: "/Mo";
+  font-size: 24px;
+  position: absolute;
+  left: 110%;
+  bottom: 0;
+}
+.pricing .card ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+  text-align: center;
+}
+.pricing .card li {
+  position: relative;
+  padding: 30px 0;
+  margin: auto;
+  width: fit-content;
+}
+.pricing .card li:not(:last-of-type)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent-color);
+  height: 1px;
+  width: 150px;
+}
+.pricing .card .btn {
+  color: var(--accent-color);
+  background-color: transparent;
+  border: 2px solid var(--accent-color);
+}
+.pricing .contact-text {
+  font-size: 16px;
+  margin-top: 50px;
+  margin-bottom: 15px;
+}
+.pricing .contact-btn {
+  margin-top: 15px;
+}
+
+/*  ===============
+    Subscribe Rules
+    ===============
+*/
+.subscribe {
+  background-image: url("../assets/subscribe.jpg");
+  background-size: cover;
+}
+.subscribe .container {
+  position: relative;
+}
+@media (min-width: 992px) {
+  .subscribe .container {
+    display: flex;
+    align-items: center;
+  }
+}
+.subscribe form {
+  border: 2px solid #fff;
+  display: flex;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto 40px;
+}
+@media (min-width: 992px) {
+  .subscribe form {
+    width: fit-content;
+    margin: 0;
+  }
+}
+.subscribe form:focus {
+  outline: 1px solid var(--accent-color);
+}
+.subscribe i {
+  color: #fff;
+  margin: auto 20px;
+}
+.email-input {
+  padding: 10px 0;
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  flex-grow: 2;
+}
+.subscribe form .btn {
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.subscribe p {
+  color: #fff;
+  line-height: var(--main-line-height);
+}
+@media (min-width: 992px) {
+  .subscribe p {
+    margin-left: 100px;
+  }
+}
+
+/*  =============
+    Contact Rules
+    =============
+*/
+@media (min-width: 768px) {
+  .contact .content {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    column-gap: 50px;
+  }
+}
+.contact .info {
+  text-align: center;
+  margin-bottom: 50px;
+}
+@media (min-width: 768px) {
+  .contact .info {
+    grid-column-start: 2;
+  }
+}
+.contact .info h4:first-of-type {
+  margin-bottom: 15px;
+}
+.contact .info h4:last-of-type {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 768px) {
+  .contact form {
+    grid-row-start: 1;
+  }
+}
+.contact .phone,
+.contact address {
+  display: block;
+  line-height: var(--main-line-height);
+  color: var(--main-text-color);
+}
+.contact form > *:not(.btn) {
+  display: block;
+  padding: 20px;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.contact form textarea {
+  height: 200px;
+}
+.contact form .btn {
+  margin-right: 0;
+}
+
+/*  ============
+    Footer Rules
+    ============
+*/
+footer {
+  background-image: url("../assets/subscribe.jpg");
+  background-size: cover;
+  padding: 50px 0;
+  text-align: center;
+}
+footer .container {
+  position: relative;
+}
+footer .logo {
+  display: block;
+}
+footer .small-section-headding {
+  position: relative;
+  margin-top: 30px;
+  padding-bottom: 20px;
+  color: #fff;
+}
+footer .small-section-headding::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  width: 120%;
+  height: 100%;
+  border-bottom: 1px solid #fff;
+}
+footer .social-icons {
+  color: #fff;
+}
+footer .social-icons i {
+  padding: 0 10px;
+}
+footer .copyright {
+  margin-top: 20px;
+  color: #fff;
+}
+footer .copyright span {
+  color: var(--accent-color);
+}

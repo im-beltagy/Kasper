@@ -1,0 +1,281 @@
+/*
+  Sections In File:-
+  ================
+  1. Services Rules
+  2. Design Rules
+  3. Portfolio Rules
+  4. Video Rules
+  5. About Us Rules
+  6. Stats Rules
+*/
+/*  =============
+    Services Rules
+    =============  */
+
+.services article {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.services article i {
+  margin-bottom: 30px;
+}
+.services article h3 {
+  color: var(--accent-color);
+  margin: 0 0 30px;
+}
+.services article p {
+  color: var(--main-text-color);
+}
+
+@media (min-width: 768px) {
+  .services article {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: 50px;
+    text-align: left;
+  }
+  .services article i,
+  .services article h3 {
+    margin: 0;
+  }
+  .services article p {
+    grid-column-start: 2;
+  }
+}
+@media (min-width: 992px) {
+  .services .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 40px;
+    row-gap: 60px;
+  }
+  .services article {
+    margin-bottom: 0;
+  }
+}
+
+/*  =============
+    Design Rules
+    =============  */
+
+.design {
+  background-image: url(../assets/design-features.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+.design img {
+  display: none;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .design img {
+    display: block;
+    position: absolute;
+    bottom: -100px;
+    left: 25%;
+    transform: translateX(-50%);
+  }
+}
+.design .text {
+  position: relative;
+  color: #fff;
+  background-color: var(--bg-color);
+  padding: 50px;
+  z-index: 5;
+}
+@media (min-width: 768px) {
+  .design .text {
+    position: relative;
+    width: 50%;
+    left: 50%;
+  }
+}
+.design h2 {
+  text-transform: uppercase;
+  margin: 0 0 40px;
+  font-weight: normal;
+}
+.design ul {
+  margin: 0;
+  padding-left: 0;
+}
+.design li {
+  list-style: none;
+  padding: 15px 0;
+}
+.design li::before {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f390";
+  margin-right: 20px;
+}
+/*  ===============
+    Portfolio Rules
+    =============== */
+
+.portfolio {
+  background-color: #fff;
+}
+.portfolio ul {
+  padding-left: 0;
+  width: fit-content;
+  margin: auto auto 60px;
+}
+.portfolio li {
+  list-style: none;
+  display: inline-block;
+  padding: 10px;
+}
+.portfolio li.active {
+  background-color: var(--accent-color);
+  color: #fff;
+}
+@media (min-width: 768px) {
+  .portfolio .gallary {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (min-width: 1200px) {
+  .portfolio .gallary {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.portfolio .image-container {
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 2px;
+}
+.portfolio .image-container img {
+  width: 100%;
+  transition: 0.3s;
+}
+.portfolio .image-container:hover img {
+  transform: rotate(3deg) scale(1.1);
+}
+.portfolio .image-container .text {
+  background-color: #fff;
+  width: 100%;
+  padding: 20px;
+  position: absolute;
+  bottom: 0;
+  transform: translateY(100%);
+  transition: 0.3s;
+}
+.portfolio .image-container:hover .text {
+  transform: translateY(0);
+}
+.portfolio .image-container .text h4 {
+  margin: 0 0 10px;
+}
+.portfolio .image-container .text p {
+  color: var(--accent-color);
+  margin: 0;
+}
+
+/*  ===========
+    Video Rules
+    =========== */
+.video {
+  padding: 0;
+}
+.video video {
+  width: 100%;
+}
+.video .text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+  padding: 50px;
+  background-color: var(--bg-color);
+  color: #fff;
+  text-align: center;
+}
+.video h2 {
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0 0 30px;
+}
+.video p {
+  margin: 0 0 30px;
+}
+.video .btn {
+  background-color: #000;
+  margin: 0 auto;
+}
+
+/*  ==============
+    About Us Rules
+    ==============
+*/
+.about-us {
+  padding-bottom: 0;
+}
+.about-us .image-container {
+  width: 100%;
+  /* max-width: original width of photo */
+  max-width: 739px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.about-us img {
+  width: 100%;
+  margin-bottom: -120px;
+}
+
+/*  ===========
+    Stats Rules
+    ===========
+*/
+
+.stats {
+  background-image: url(../assets/stats.png);
+  background-size: cover;
+}
+.stats .container {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .stats .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+}
+.stats .box {
+  position: relative;
+  padding: 50px;
+  color: #fff;
+  background-color: var(--bg-color);
+}
+@media (min-width: 768px) {
+  .stats .box {
+    width: 50%;
+  }
+}
+@media (min-width: 992px) {
+  .stats .box {
+    width: 25%;
+  }
+}
+.stats .box i {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 30px;
+  padding: 12px;
+  color: #fff;
+  background-color: #000;
+  border-radius: 100%;
+}
+.stats .box .progress {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 20px;
+  font-size: 50px;
+  font-weight: bold;
+}
+.stats .box .title {
+  font-size: 14px;
+  text-align: center;
+}

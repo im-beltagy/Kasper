@@ -1,0 +1,136 @@
+/*  ================
+    Our Skills Rules
+    ================
+*/
+@media (min-width: 992px) {
+  .our-skills .container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .our-skills .container > div {
+    flex-basis: 45%;
+  }
+}
+/* testmonials */
+.testmonials {
+  margin-bottom: 50px;
+}
+.testmonials .feedback {
+  margin-bottom: 30px;
+}
+@media (min-width: 768px) {
+  .testmonials .feedback {
+    display: flex;
+    align-items: center;
+  }
+}
+.testmonials .feedback .avatar {
+  display: block;
+  width: 100px;
+  border-radius: 100%;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .testmonials .feedback .avatar {
+    flex: 1 0 100px;
+    margin: 0 30px 0 0;
+  }
+}
+.testmonials .feedback .text {
+  border-bottom: 1px solid #ccc;
+}
+.testmonials .feedback .text p {
+  text-align: center;
+  line-height: 1.8;
+}
+@media (min-width: 768px) {
+  .testmonials .feedback .text p {
+    text-align: left;
+  }
+}
+.testmonials .feedback .text span {
+  display: inline-block;
+  margin-bottom: 15px;
+  font-size: 14px;
+  width: 100%;
+  text-align: right;
+  color: var(--main-text-color);
+}
+.our-skills .nav-bullets li {
+  padding: 7px;
+}
+.our-skills .nav-bullets li:not(.active) {
+  border-color: var(--main-text-color);
+}
+/* skills */
+.skills h4.small-section-headding {
+  margin-left: 0;
+  margin-bottom: 10px;
+  font-size: 16 px;
+}
+.prog-bar {
+  position: relative;
+  width: 100%;
+  height: 30px;
+  margin-bottom: 30px;
+  background-color: #dedadc;
+}
+.prog-bar .visual-progress {
+  position: absolute;
+  height: 100%;
+  background-color: var(--accent-color);
+}
+.prog-bar.percent-90 .visual-progress {
+  width: 90%;
+}
+.prog-bar.percent-80 .visual-progress {
+  width: 80%;
+}
+.prog-bar.percent-85 .visual-progress {
+  width: 85%;
+}
+.prog-bar::before {
+  /* --Text Progress-- */
+  content: "";
+  /* position */
+  position: absolute;
+  bottom: calc(100% + 9px);
+  transform: translateX(-50%);
+  /* styling */
+  padding: 5px;
+  border-radius: 3px;
+  background-color: #000;
+  color: #fff;
+}
+.prog-bar.percent-90::before {
+  left: 90%;
+  content: "90%";
+}
+.prog-bar.percent-80::before {
+  left: 80%;
+  content: "80%";
+}
+.prog-bar.percent-85::before {
+  left: 85%;
+  content: "85%";
+}
+.prog-bar::after {
+  /* --Arrow-- */
+  content: "";
+  /* position */
+  position: absolute;
+  bottom: 100%;
+  transform: translateX(-50%);
+  /* styling */
+  border: 5px solid transparent;
+  border-top-color: #000;
+}
+.prog-bar.percent-90::after {
+  left: 90%;
+}
+.prog-bar.percent-80::after {
+  left: 80%;
+}
+.prog-bar.percent-85::after {
+  left: 85%;
+}

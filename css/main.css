@@ -1,0 +1,154 @@
+/*
+    In This File:-
+    ============
+    1. Variables
+    2. Global Rules
+    3. Container
+    4. OverLay
+    5. Nav Bullets
+    6. Section Headding
+    7. Buttons
+*/
+
+/*  =========
+    Variables
+    ========= */
+:root {
+  --accent-color: #00c7fc;
+  --bg-color: rgb(15 116 143 / 70%);
+  --main-line-height: 2;
+  --main-text-color: #777;
+}
+/*  ============
+    Global Rules
+    ============ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+/*  =========
+    Container
+    ========= */
+.container {
+  padding: 0 20px;
+  margin: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1180px;
+  }
+}
+/*  =======
+    Overlay
+    ======= */
+.with-overlay {
+  position: relative;
+}
+.with-overlay::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #0009;
+}
+section {
+  padding: 100px 0;
+}
+/*  ===========
+    Nav Bullets
+    =========== */
+.nav-bullets {
+  padding: 0;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+.nav-bullets li {
+  list-style-type: none;
+  display: inline-block;
+  padding: 10px;
+  margin: 0 2px;
+  border-radius: 100%;
+  border: 1px solid #fff;
+  cursor: pointer;
+}
+.nav-bullets li.active {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+}
+/*  ===============
+    Section Hedding
+    =============== */
+.section-headding,
+.small-section-headding {
+  text-transform: uppercase;
+  font-weight: normal;
+  width: fit-content;
+}
+.section-headding {
+  position: relative;
+  font-size: 40px;
+  margin: auto auto 70px;
+}
+.small-section-headding {
+  font-size: 20px;
+  margin: auto auto 30px;
+}
+.section-headding::before {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 15%;
+  width: 70%;
+  height: 2px;
+  border-radius: 1px;
+  background-color: #000;
+}
+.section-headding::after {
+  content: "";
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translate(-50%, 50%);
+  padding: 8px;
+  border-radius: 100%;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+.section-headding + p,
+.small-section-headding + p {
+  width: fit-content;
+  text-align: center;
+  margin: auto auto 100px;
+  line-height: var(--main-line-height);
+  color: var(--main-text-color);
+}
+/*  =======
+    Buttons
+    =======*/
+.btn {
+  display: block;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--accent-color);
+  width: fit-content;
+  padding: 15px 20px;
+  margin: 30px auto;
+  border: none;
+}
